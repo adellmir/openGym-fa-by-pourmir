@@ -42,14 +42,20 @@ jobs:
         working-directory: frontend/android
         run: chmod +x gradlew
 
-      - name: Build Debug APK
+      - name: Build Debug APK (Sideload flavor)
         working-directory: frontend/android
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+        run: ./gradlew assembleSideloadDebug --no-daemon --stacktrace
+
+      - name: List APK files (for debug)
+        working-directory: frontend/android
+        run: find app/build/outputs -name "*.apk" -type f
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: openGym-fa-debug
-          path: frontend/android/app/build/outputs/apk/debug/*.apk
+          path: |
+            frontend/android/app/build/outputs/apk/sideload/debug/*.apk
+            frontend/android/app/build/outputs/apk/**/debug/*.apk
           retention-days: 14
           if-no-files-found: error
