@@ -22,6 +22,7 @@ import { startWatchSync, bindWatchAppActions, patchSetIn } from './lib/watch-syn
 import { stampWorkout } from './lib/sync-merge.js'
 import { logWeighIn } from './lib/bodyweight.js'
 import { startWidgetSync } from './lib/widgets.js'
+import { startMuscleWidgetSync } from './lib/muscle-widget.js'
 import { startLiveActivitySync } from './lib/live-activity.js'
 import { useWakeLock } from './lib/wakelock.js'
 import { installViewportGuard } from './lib/viewport-guard.js'
@@ -409,13 +410,14 @@ export default function App() {
     })
     return () => { gone = true; stop?.(); unbind() }
   }, [])
-  // iPhone app: the Home Screen widgets and the workout's Live Activity (lib/widgets.js,
-  // lib/live-activity.js). Nothing at all on the web or on Android.
+  // Home Screen widgets: iOS via lib/widgets.js; Android muscle status via lib/muscle-widget.js.
+  // Live Activity is iOS only (lib/live-activity.js).
   useEffect(() => {
     if (!MOBILE) return
     const stops = [], gone = { v: false }
     const keep = fn => { if (gone.v) fn(); else stops.push(fn) }
     startWidgetSync({ useStore }).then(keep).catch(() => {})
+    startMuscleWidgetSync({ useStore }).then(keep).catch(() => {})
     startLiveActivitySync({ useStore, useUI }).then(keep).catch(() => {})
     return () => { gone.v = true; stops.forEach(fn => fn()) }
   }, [])
