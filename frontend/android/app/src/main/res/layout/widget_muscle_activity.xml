@@ -24,12 +24,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot0"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot0" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname0"
                 android:layout_width="0dp"
@@ -48,12 +43,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot1"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot1" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname1"
                 android:layout_width="0dp"
@@ -72,12 +62,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot2"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot2" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname2"
                 android:layout_width="0dp"
@@ -96,12 +81,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot3"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot3" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname3"
                 android:layout_width="0dp"
@@ -120,12 +100,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot4"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot4" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname4"
                 android:layout_width="0dp"
@@ -144,12 +119,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot5"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot5" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname5"
                 android:layout_width="0dp"
@@ -168,12 +138,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot6"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot6" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname6"
                 android:layout_width="0dp"
@@ -192,12 +157,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot7"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot7" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname7"
                 android:layout_width="0dp"
@@ -216,12 +176,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot8"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot8" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname8"
                 android:layout_width="0dp"
@@ -240,12 +195,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot9"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot9" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname9"
                 android:layout_width="0dp"
@@ -264,12 +214,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot10"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot10" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname10"
                 android:layout_width="0dp"
@@ -288,12 +233,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot11"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot11" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname11"
                 android:layout_width="0dp"
@@ -312,12 +252,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot12"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot12" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname12"
                 android:layout_width="0dp"
@@ -336,12 +271,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot13"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot13" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname13"
                 android:layout_width="0dp"
@@ -360,12 +290,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot14"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot14" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname14"
                 android:layout_width="0dp"
@@ -384,12 +309,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot15"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot15" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname15"
                 android:layout_width="0dp"
@@ -408,12 +328,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot16"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot16" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname16"
                 android:layout_width="0dp"
@@ -432,12 +347,7 @@
             android:gravity="center_vertical"
             android:paddingTop="2dp"
             android:paddingBottom="2dp">
-            <TextView
-                android:id="@+id/mdot17"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginEnd="8dp"
-                android:background="#95A5A6" />
+            <ImageView android:id="@+id/mdot17" android:layout_width="10dp" android:layout_height="10dp" android:layout_marginEnd="8dp" android:contentDescription="dot" />
             <TextView
                 android:id="@+id/mname17"
                 android:layout_width="0dp"

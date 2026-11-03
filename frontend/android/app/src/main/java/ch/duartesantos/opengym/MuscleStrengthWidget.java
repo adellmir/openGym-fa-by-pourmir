@@ -55,7 +55,7 @@ public class MuscleStrengthWidget extends AppWidgetProvider {
             views.setViewVisibility(ROW_IDS[i], android.view.View.VISIBLE);
             views.setTextViewText(NAME_IDS[i], r.name);
             views.setTextViewText(VAL_IDS[i], MuscleWidgetData.pct(r.strength));
-            views.setInt(DOT_IDS[i], "setBackgroundColor", MuscleWidgetData.strengthColor(r.strength));
+            views.setImageViewBitmap(DOT_IDS[i], MuscleWidgetData.colorBitmap(MuscleWidgetData.strengthColor(r.strength), 24));
             views.setOnClickPendingIntent(ROW_IDS[i], MuscleWidgetIntents.openMuscle(context, r.slug, 3100 + i));
             i++;
         }

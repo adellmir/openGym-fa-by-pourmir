@@ -81,6 +81,17 @@ public final class MuscleWidgetData {
         return 0xFF000000 | (r << 16) | (g << 8) | b;
     }
 
+
+    public static android.graphics.Bitmap colorBitmap(int color, int sizePx) {
+        android.graphics.Bitmap bm = android.graphics.Bitmap.createBitmap(sizePx, sizePx, android.graphics.Bitmap.Config.ARGB_8888);
+        android.graphics.Canvas c = new android.graphics.Canvas(bm);
+        android.graphics.Paint paint = new android.graphics.Paint(android.graphics.Paint.ANTI_ALIAS_FLAG);
+        paint.setColor(color);
+        float r = sizePx / 2f;
+        c.drawCircle(r, r, r, paint);
+        return bm;
+    }
+
     public static String pct(double v) {
         return Math.round(Math.max(0, Math.min(1, v)) * 100) + "%";
     }

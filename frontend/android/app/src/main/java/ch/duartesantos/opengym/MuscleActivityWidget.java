@@ -53,7 +53,7 @@ public class MuscleActivityWidget extends AppWidgetProvider {
             if (i >= ROW_IDS.length) break;
             views.setViewVisibility(ROW_IDS[i], android.view.View.VISIBLE);
             views.setTextViewText(NAME_IDS[i], r.name);
-            views.setInt(DOT_IDS[i], "setBackgroundColor", MuscleWidgetData.activityColor(r.trainedWeek));
+            views.setImageViewBitmap(DOT_IDS[i], MuscleWidgetData.colorBitmap(MuscleWidgetData.activityColor(r.trainedWeek), 24));
             views.setOnClickPendingIntent(ROW_IDS[i], MuscleWidgetIntents.openMuscle(context, r.slug, 1100 + i));
             if (!r.trainedWeek) missed.add(r);
             i++;

@@ -55,7 +55,7 @@ public class MuscleFatigueWidget extends AppWidgetProvider {
             views.setViewVisibility(ROW_IDS[i], android.view.View.VISIBLE);
             views.setTextViewText(NAME_IDS[i], r.name);
             views.setTextViewText(VAL_IDS[i], MuscleWidgetData.pct(r.fatigue));
-            views.setInt(DOT_IDS[i], "setBackgroundColor", MuscleWidgetData.fatigueColor(r.fatigueLabel));
+            views.setImageViewBitmap(DOT_IDS[i], MuscleWidgetData.colorBitmap(MuscleWidgetData.fatigueColor(r.fatigueLabel), 24));
             views.setOnClickPendingIntent(ROW_IDS[i], MuscleWidgetIntents.openMuscle(context, r.slug, 2100 + i));
             i++;
         }
