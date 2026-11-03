@@ -41,11 +41,7 @@ public class MainActivity extends BridgeActivity {
         passSystemBarsToPage();
     }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        showHealthPrivacy(intent);
-    }
+    
 
     // Health Connect's "why does this app ask?" link (the two activity-aliases in the manifest)
     // must show the privacy policy, the same one the Play listing names: opened in the browser.
@@ -173,4 +169,40 @@ public class MainActivity extends BridgeActivity {
                 + "window.dispatchEvent(new CustomEvent('opengym:native-keyboard',{detail:{height:" + px + "}}))"
                 + "})(document.documentElement)";
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        handleMuscleIntent(getIntent());
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        showHealthPrivacy(intent);
+        handleMuscleIntent(intent);
+    }
+
+    /** Widget → open #/muscles?m=slug inside the WebView. */
+    private void handleMuscleIntent(Intent intent) {
+        if (intent == null) return;
+        String slug = intent.getStringExtra(MuscleWidgetIntents.EXTRA_MUSCLE);
+        if (slug == null || slug.isEmpty()) {
+            android.net.Uri data = intent.getData();
+            if (data != null) slug = data.getQueryParameter("m");
+        }
+        if (slug == null) slug = "";
+        final String path = slug.isEmpty() ? "#/stats" : "#/muscles?m=" + slug;
+        // Clear so rotation / resume does not re-navigate forever.
+        intent.removeExtra(MuscleWidgetIntents.EXTRA_MUSCLE);
+        if (bridge == null || bridge.getWebView() == null) return;
+        final String js = "(function(){try{window.location.hash=" + jsonStr(path) + "}catch(e){}})()";
+        bridge.getWebView().post(() -> bridge.getWebView().evaluateJavascript(js, null));
+    }
+
+    private static String jsonStr(String s) {
+        return "\"" + s.replace("\\", "\\\\").replace("\"", "\\\"") + "\"";
+    }
+
 }

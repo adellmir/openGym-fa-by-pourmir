@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wroot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="#CC1C1C1E">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="تعادل" android:textSize="10sp" android:textColor="#AAAAAA" />
+            <TextView android:id="@+id/w_balance" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textSize="16sp" android:textStyle="bold" android:textColor="#FFFFFF" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="خستگی" android:textSize="10sp" android:textColor="#AAAAAA" />
+            <TextView android:id="@+id/w_fatigue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textSize="16sp" android:textStyle="bold" android:textColor="#FFFFFF" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="قدرت" android:textSize="10sp" android:textColor="#AAAAAA" />
+            <TextView android:id="@+id/w_strength" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textSize="16sp" android:textStyle="bold" android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="سفید=تمرین‌نشده · قرمز=تمرین‌شده (٪ خستگی)" android:textSize="10sp" android:textColor="#888888" android:paddingBottom="4dp" />
+
+        <LinearLayout
+            android:id="@+id/mrow0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval0"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval1"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval2"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval3"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval4"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval5"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval6"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval7"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval8"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval9"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval10"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname11"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval11"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval12"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname13"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval13"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval14"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname15"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval15"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval16"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/mrow17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp">
+            <TextView
+                android:id="@+id/mname17"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+            <TextView
+                android:id="@+id/mval17"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:text="—" />
+        </LinearLayout>
+</LinearLayout>

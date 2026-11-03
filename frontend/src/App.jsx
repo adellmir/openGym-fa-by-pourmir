@@ -410,8 +410,8 @@ export default function App() {
     })
     return () => { gone = true; stop?.(); unbind() }
   }, [])
-  // Home Screen widgets: iOS via lib/widgets.js; Android muscle status via lib/muscle-widget.js.
-  // Live Activity is iOS only (lib/live-activity.js).
+  // iPhone app: the Home Screen widgets and the workout's Live Activity (lib/widgets.js,
+  // lib/live-activity.js). Nothing at all on the web or on Android.
   useEffect(() => {
     if (!MOBILE) return
     const stops = [], gone = { v: false }

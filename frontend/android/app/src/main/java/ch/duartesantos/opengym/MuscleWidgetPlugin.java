@@ -6,14 +6,6 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
-/**
- * Updates the home-screen Muscle Status widget from the WebView.
- *
- * Usage from JS:
- *   import { registerPlugin } from '@capacitor/core';
- *   const MuscleWidget = registerPlugin('MuscleWidget');
- *   await MuscleWidget.update({ balance: '72%', fatigue: '41%', strength: '88%' });
- */
 @CapacitorPlugin(name = "MuscleWidget")
 public class MuscleWidgetPlugin extends Plugin {
 
@@ -24,16 +16,23 @@ public class MuscleWidgetPlugin extends Plugin {
             call.reject("no context");
             return;
         }
-
-        String balance = call.getString("balance", "—");
-        String fatigue = call.getString("fatigue", "—");
-        String strength = call.getString("strength", "—");
-
         try {
-            MuscleWidgetProvider.saveValues(ctx, balance, fatigue, strength);
+            String json = call.getString("json", null);
+            if (json == null || json.isEmpty()) {
+                String balance = call.getString("balance", "—");
+                String fatigue = call.getString("fatigue", "—");
+                String strength = call.getString("strength", "—");
+                json = "{\"balance\":\"" + balance + "\",\"fatigue\":\"" + fatigue
+                    + "\",\"strength\":\"" + strength + "\",\"muscles\":[]}";
+            }
+            MuscleWidgetData.save(ctx, json);
+            MuscleActivityWidget.updateAll(ctx);
+            MuscleFatigueWidget.updateAll(ctx);
+            MuscleStrengthWidget.updateAll(ctx);
+            MuscleTextWidget.updateAll(ctx);
             call.resolve();
         } catch (Exception e) {
-            call.reject("failed to update widget: " + e.getMessage());
+            call.reject("failed: " + e.getMessage());
         }
     }
 }
