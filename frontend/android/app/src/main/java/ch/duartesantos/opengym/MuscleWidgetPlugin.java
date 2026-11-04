@@ -26,10 +26,7 @@ public class MuscleWidgetPlugin extends Plugin {
                     + "\",\"strength\":\"" + strength + "\",\"muscles\":[]}";
             }
             MuscleWidgetData.save(ctx, json);
-            MuscleActivityWidget.updateAll(ctx);
-            MuscleFatigueWidget.updateAll(ctx);
-            MuscleStrengthWidget.updateAll(ctx);
-            MuscleTextWidget.updateAll(ctx);
+            MuscleCardsWidget.updateAll(ctx);
             call.resolve();
         } catch (Exception e) {
             call.reject("failed: " + e.getMessage());
