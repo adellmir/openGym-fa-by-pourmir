@@ -68,8 +68,8 @@ public class MuscleCardsWidget extends AppWidgetProvider {
 
                 rv.setViewVisibility(cardId, View.VISIBLE);
                 rv.setTextViewText(nameId, m.name != null ? m.name : m.slug);
-                rv.setTextViewText(fatId, "خ " + MuscleWidgetData.pct(fat));
-                rv.setTextViewText(recId, "ر " + MuscleWidgetData.pct(rec));
+                rv.setTextViewText(fatId, "خستگی " + MuscleWidgetData.pct(fat));
+                rv.setTextViewText(recId, "ریکاوری " + MuscleWidgetData.pct(rec));
 
                 int bg = R.drawable.widget_card_ready;
                 if ("fatigued".equals(label)) bg = R.drawable.widget_card_fatigued;
