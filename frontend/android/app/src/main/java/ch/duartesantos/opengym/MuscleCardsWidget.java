@@ -93,11 +93,17 @@ public class MuscleCardsWidget extends AppWidgetProvider {
         mgr.updateAppWidget(widgetId, rv);
     }
 
+    /** Fatigue values closer than this are treated as "near". */
+    private static final double FATIGUE_NEAR = 0.05;
+
     /**
      * Priority:
-     * 1) ready — lowest fatigue first
-     * 2) recovering — lowest fatigue first
-     * 3) fatigued — highest fatigue first
+     * 1) ready — lowest fatigue first; if near, higher recovery first
+     * 2) recovering — same rule
+     * 3) fatigued — highest fatigue first; if near, lower recovery first
+     *
+     * Recovery is currently (1 - fatigue); when an independent recovery
+     * metric exists, compare that instead in compareByFatigueThenRecovery.
      */
     static List<MuscleWidgetData.MuscleRow> sortMuscles(List<MuscleWidgetData.MuscleRow> src) {
         List<MuscleWidgetData.MuscleRow> ready = new ArrayList<>();
@@ -109,14 +115,39 @@ public class MuscleCardsWidget extends AppWidgetProvider {
             else if ("recovering".equals(l)) recovering.add(m);
             else ready.add(m);
         }
-        Collections.sort(ready, Comparator.comparingDouble(a -> a.fatigue));
-        Collections.sort(recovering, Comparator.comparingDouble(a -> a.fatigue));
-        Collections.sort(fatigued, (a, b) -> Double.compare(b.fatigue, a.fatigue));
+        Collections.sort(ready, MuscleCardsWidget::compareReadyLike);
+        Collections.sort(recovering, MuscleCardsWidget::compareReadyLike);
+        Collections.sort(fatigued, MuscleCardsWidget::compareFatigued);
         List<MuscleWidgetData.MuscleRow> out = new ArrayList<>(ready.size() + recovering.size() + fatigued.size());
         out.addAll(ready);
         out.addAll(recovering);
         out.addAll(fatigued);
         return out;
+    }
+
+    /** Ready / recovering: low fatigue first; if near, high recovery first; then untrained this week. */
+    private static int compareReadyLike(MuscleWidgetData.MuscleRow a, MuscleWidgetData.MuscleRow b) {
+        double df = a.fatigue - b.fatigue;
+        if (Math.abs(df) >= FATIGUE_NEAR) return Double.compare(a.fatigue, b.fatigue);
+        double recA = recoveryOf(a);
+        double recB = recoveryOf(b);
+        int byRec = Double.compare(recB, recA);
+        if (byRec != 0) return byRec;
+        // Prefer muscles not trained this week when still tied
+        if (a.trainedWeek != b.trainedWeek) return a.trainedWeek ? 1 : -1;
+        return 0;
+    }
+
+    /** Fatigued: high fatigue first; if near, low recovery first. */
+    private static int compareFatigued(MuscleWidgetData.MuscleRow a, MuscleWidgetData.MuscleRow b) {
+        double df = b.fatigue - a.fatigue;
+        if (Math.abs(a.fatigue - b.fatigue) >= FATIGUE_NEAR) return Double.compare(b.fatigue, a.fatigue);
+        return Double.compare(recoveryOf(a), recoveryOf(b));
+    }
+
+    private static double recoveryOf(MuscleWidgetData.MuscleRow m) {
+        // Independent recovery can replace this later; for now mirror UI: 1 - fatigue
+        return Math.max(0.0, Math.min(1.0, 1.0 - m.fatigue));
     }
 
     private static int id(Context ctx, String name) {
